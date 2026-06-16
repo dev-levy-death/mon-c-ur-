@@ -21,6 +21,7 @@
             overflow-x: hidden;
         }
 
+        /* BOUTON DE MUSIQUE STYLE "VERCEL" EN HAUT À DROITE */
         .top-music-btn {
             position: fixed;
             top: 20px;
@@ -48,6 +49,7 @@
             transform: scale(0.95);
         }
 
+        /* BARRES D'ANIMATION AUDIO MINIATURES */
         .mini-wave {
             display: flex;
             align-items: flex-end;
@@ -62,6 +64,7 @@
             border-radius: 1px;
         }
 
+        /* L'animation s'active avec la classe .playing en JavaScript */
         .playing .mini-bar {
             animation: miniBounce 0.8s ease-in-out infinite alternate;
         }
@@ -273,7 +276,7 @@
         <span id="btnText">Lancer la musique</span>
     </button>
 
-    <audio id="main-audio" src="musique.mp3" loop preloade="auto"></audio>
+    <audio id="main-audio" src="musique.mp3" loop preload="auto"></audio>
 
     <section class="hero-section">
         <h1 class="main-title">À Notre Reine</h1>
@@ -320,8 +323,8 @@
                     btnText.textContent = "Couper le son";
                 })
                 .catch(error => {
-                    alert("Erreur de lecture : Vérifie que ton fichier s'appelle bien exactement '" + audio.getAttribute('src') + "' et qu'il est bien au format MP3.");
-                    console.log(error);
+                    alert("Erreur GitHub Pages : Assure-toi que ton fichier s'appelle exactement 'musique.mp3' (tout en minuscules) et qu'il se trouve dans le même dossier que 'index.html' sur ton dépôt.");
+                    console.error(error);
                 });
             } else {
                 audio.pause();
@@ -331,5 +334,6 @@
         });
     </script>
 </body>
-        </html>
+</html>
+
         

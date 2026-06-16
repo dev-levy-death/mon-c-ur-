@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pour Manuella - Notre Reine</title>
     <style>
-        /* Importation de 5 polices d'écriture magnifiques et variées */
-        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Great+Vibes&family=Montserrat:wght@100;300;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght=0,400;1,400&family=Great+Vibes&family=Montserrat:wght=100;300;600&display=swap');
 
         * {
             box-sizing: border-box;
@@ -16,13 +15,13 @@
 
         body, html {
             height: 100%;
-            background-color: #ffb6c1; /* Rose principal (Rose pastel/lumineux) */
-            color: #ffffff; /* Écritures blanches principales */
+            background-color: #ffb6c1;
+            color: #ffffff;
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
         }
 
-        /* BOUTON FLOTTANT MUSIQUE (Inspiré de ta capture) */
+        /* BOUTON DE MUSIQUE STYLE "VERCEL" EN HAUT À DROITE */
         .top-music-btn {
             position: fixed;
             top: 20px;
@@ -50,7 +49,7 @@
             transform: scale(0.95);
         }
 
-        /* Animation des barres de son miniatures dans le bouton */
+        /* BARRES D'ANIMATION AUDIO MINIATURES */
         .mini-wave {
             display: flex;
             align-items: flex-end;
@@ -65,7 +64,7 @@
             border-radius: 1px;
         }
 
-        /* L'animation ne se déclenche que si la musique est active (classe .playing) */
+        /* L'animation s'active avec la classe .playing en JavaScript */
         .playing .mini-bar {
             animation: miniBounce 0.8s ease-in-out infinite alternate;
         }
@@ -77,7 +76,6 @@
             100% { height: 12px; }
         }
 
-        /* ÉCRAN D'ACCUEIL IMMERSIF (ROSE DOMINANT & NUANCES DE NOIR) */
         .hero-section {
             position: relative;
             height: 100vh;
@@ -90,7 +88,6 @@
             background: linear-gradient(135deg, #ff69b4 0%, #ffb6c1 50%, #1a1a1a 100%);
         }
 
-        /* Police Écriture 1 : Style Impérial / Luxe */
         .main-title {
             font-family: 'Cinzel', serif;
             font-size: 3rem;
@@ -102,7 +99,6 @@
             margin-bottom: 10px;
         }
 
-        /* Police Écriture 2 : Grande Calligraphie fluide */
         .accent-name {
             font-family: 'Great Vibes', cursive;
             font-size: 6.5rem;
@@ -112,7 +108,6 @@
             font-weight: bold;
         }
 
-        /* Police Écriture 3 : Minimaliste & Moderne */
         .subtitle {
             font-family: 'Montserrat', sans-serif;
             font-weight: 100;
@@ -125,7 +120,6 @@
             border-radius: 2px;
         }
 
-        /* BOUTON D'ENTRÉE ÉLÉGANT */
         .scroll-btn {
             position: absolute;
             bottom: 40px;
@@ -152,7 +146,6 @@
             color: #ffffff;
         }
 
-        /* SECTION DE CONTENU */
         .content-container {
             background-color: #ffffff;
             color: #1a1a1a;
@@ -165,7 +158,6 @@
             text-align: center;
         }
 
-        /* Police Écriture 4 : Style Éditorial / Poétique */
         .poem-text-1 {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -176,7 +168,6 @@
             position: relative;
         }
 
-        /* Police Écriture 5 : Style Manuscrit fin */
         .signature-text {
             font-family: 'Alex Brush', cursive;
             font-size: 3.5rem;
@@ -194,7 +185,6 @@
             margin-bottom: 60px;
         }
 
-        /* STRUCTURE EN FLUX CONTINU POUR ALTERNER PHOTOS ET POÈMES */
         .romantic-flow {
             margin-top: 60px;
             display: flex;
@@ -203,7 +193,6 @@
             gap: 50px;
         }
 
-        /* ENCADREMENT DÉCORÉ ET PRÉSERVATION DU CADRAGE ORIGINAL */
         .photo-frame {
             background: #ffffff;
             border: 12px double #ffb6c1;
@@ -229,7 +218,6 @@
             box-shadow: 0 18px 35px rgba(255, 105, 180, 0.25);
         }
 
-        /* INTERCALAIRES : MINI POÈMES D'AMOUR */
         .mini-poem {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -251,7 +239,6 @@
             text-align: center;
         }
 
-        /* STYLE POUR LA SIGNATURE FINALE DE LEVY */
         .final-levy-signature {
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
@@ -262,7 +249,6 @@
             text-transform: uppercase;
         }
 
-        /* Le lecteur par défaut caché car contrôlé par le bouton du haut */
         #main-audio {
             display: none;
         }
@@ -290,75 +276,39 @@
         <span id="btnText">Lancer la musique</span>
     </button>
 
-    <audio id="main-audio" loop>
-        <source src="#" type="audio/mpeg">
-    </audio>
+    <audio id="main-audio" src="musique.mp3" loop preload="auto"></audio>
 
     <section class="hero-section">
         <h1 class="main-title">À Notre Reine</h1>
         <span class="accent-name">Manuella</span>
         <p class="subtitle">Une Mère Exceptionnelle</p>
-        
         <a href="#decouvrir" class="scroll-btn">Découvrir</a>
     </section>
 
     <div id="decouvrir" class="content-container">
         <main class="content-section">
-            
-            <p class="poem-text-1">
-                "L'amour d'une mère est le plus beau sanctuaire de l'univers."
-            </p>
-
-            <p class="signature-text">
-                Pour toi, Manuella...
-            </p>
-
-            <p class="poem-text-2">
-                Ce site a été imaginé comme un poème visuel. Un espace épuré où chaque couleur et chaque ligne reflètent ton élégance naturelle. Merci d’illuminer nos vies avec autant de grâce et de douceur au quotidien.
-            </p>
+            <p class="poem-text-1">"L'amour d'une mère est le plus beau sanctuaire de l'univers."</p>
+            <p class="signature-text">Pour toi, Manuella...</p>
+            <p class="poem-text-2">Ce site a été imaginé comme un poème visuel. Un espace épuré où chaque couleur et chaque ligne reflètent ton élégance naturelle. Merci d’illuminer nos vies avec autant de grâce et de douceur au quotidien.</p>
 
             <div class="romantic-flow">
+                <div class="photo-frame"><img src="https://www.image2url.com/r2/default/images/1781635799860-c1a742fa-838e-427b-b998-6b036a155d68.jpg" alt="Manuella - Souvenir 1"></div>
+                <p class="mini-poem">Ton regard est une promesse de douceur, un phare qui guide nos pas et réchauffe nos cœurs.</p>
                 
-                <div class="photo-frame">
-                    <img src="https://www.image2url.com/r2/default/images/1781635799860-c1a742fa-838e-427b-b998-6b036a155d68.jpg" alt="Manuella - Souvenir 1">
-                </div>
-
-                <p class="mini-poem">
-                    Ton regard est une promesse de douceur, un phare qui guide nos pas et réchauffe nos cœurs.
-                </p>
-
-                <div class="photo-frame">
-                    <img src="https://www.image2url.com/r2/default/images/1781635929433-95431ad0-056e-448c-b91d-453c34ba1aea.jpg" alt="Manuella - Souvenir 2">
-                </div>
-
-                <p class="mini-poem">
-                    Chacun de tes sourires efface les chagrins, tu transformes le quotidien en un chemin serein.
-                </p>
-
-                <div class="photo-frame">
-                    <img src="https://www.image2url.com/r2/default/images/1781636073726-87bccfb7-2b17-4b91-8765-af42a8e914a4.jpg" alt="Manuella - Souvenir 3">
-                </div>
-
-                <p class="mini-poem">
-                    Tu portes en toi une force royale et tranquille, rendant la vie plus belle et les tempêtes dociles.
-                </p>
-
-                <div class="photo-frame">
-                    <img src="https://www.image2url.com/r2/default/images/1781636137876-4a7958f6-90da-4ae2-9adc-2368e3766694.jpg" alt="Manuella - Souvenir 4">
-                </div>
-
+                <div class="photo-frame"><img src="https://www.image2url.com/r2/default/images/1781635929433-95431ad0-056e-448c-b91d-453c34ba1aea.jpg" alt="Manuella - Souvenir 2"></div>
+                <p class="mini-poem">Chacun de tes sourires efface les chagrins, tu transformes le quotidien en un chemin serein.</p>
+                
+                <div class="photo-frame"><img src="https://www.image2url.com/r2/default/images/1781636073726-87bccfb7-2b17-4b91-8765-af42a8e914a4.jpg" alt="Manuella - Souvenir 3"></div>
+                <p class="mini-poem">Tu portes en toi une force royale et tranquille, rendant la vie plus belle et les tempêtes dociles.</p>
+                
+                <div class="photo-frame"><img src="https://www.image2url.com/r2/default/images/1781636137876-4a7958f6-90da-4ae2-9adc-2368e3766694.jpg" alt="Manuella - Souvenir 4"></div>
             </div>
 
-            <div class="final-levy-signature">
-                TON BÉBÉ LEVY
-            </div>
-
+            <div class="final-levy-signature">TON BÉBÉ LEVY</div>
         </main>
     </div>
 
-    <footer>
-        Créé avec une infinie admiration
-    </footer>
+    <footer>Créé avec une infinie admiration</footer>
 
     <script>
         const audio = document.getElementById('main-audio');
@@ -367,9 +317,15 @@
 
         btn.addEventListener('click', function() {
             if (audio.paused) {
-                audio.play();
-                btn.classList.add('playing');
-                btnText.textContent = "Couper le son";
+                audio.play()
+                .then(() => {
+                    btn.classList.add('playing');
+                    btnText.textContent = "Couper le son";
+                })
+                .catch(error => {
+                    alert("Erreur GitHub Pages : Assure-toi que ton fichier s'appelle exactement 'musique.mp3' (tout en minuscules) et qu'il se trouve dans le même dossier que 'index.html' sur ton dépôt.");
+                    console.error(error);
+                });
             } else {
                 audio.pause();
                 btn.classList.remove('playing');
@@ -377,7 +333,8 @@
             }
         });
     </script>
-
 </body>
-      </html>
+</html>
+
+        
       
